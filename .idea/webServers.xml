@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9c957da7-bd63-4538-b7cb-6f2451d3fec7" name="vagrant" url="http://localhost">
+        <fileTransfer mountedRoot="$USER_HOME$/vagrant/vagrant-focal64-php8.1/sync/html/sae/php-basics--0323" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
