@@ -18,7 +18,7 @@ $c = 'B';
 
 // var_dump($a, $b);
 
-/**
+/*
  * In PHP können Sie Referenzen verwenden, um auf den gleichen Wert zu verweisen, der in mehreren Variablen gespeichert ist.
  * Mit Referenzen können Sie eine Variable erstellen, die auf den Wert einer anderen Variable verweist.
  * Änderungen an der referenzierten Variable wirken sich auch auf die referenzierende Variable aus.

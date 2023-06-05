@@ -23,7 +23,7 @@ $welcome1 = 'Hallo ' . $name . 's Hund';
 $welcome2 = "Hallo {$name}s Hund";
 //echo $welcome2;
 
-/**
+/*
  * Integer
  *
  * Ein Integer ist ein ganzzahliger numerischer Datentyp, der positive und negative ganze Zahlen repräsentiert.
@@ -38,7 +38,7 @@ $c = $x * $y; //20
 $d = $y / $x; //5
 $e = $y % $x; //0
 
-/**
+/*
  * Floats
  *
  * Ein Float ist ein Dezimalzahl-Datentyp, der Fließkommazahlen darstellt.
@@ -52,7 +52,7 @@ $g = $w - $v; //4.1976
 $h = $v * $w; //6.72839545
 $i = $w / $v; //4.3956043956044
 
-/**
+/*
  * Array
  *
  * Ein Array ist eine geordnete Sammlung von Werten, die über einen Index zugänglich sind.
@@ -90,7 +90,7 @@ $apple_exists = in_array( 'apple', $fruits );
 //	echo $fruit . ' hat den index ' . $index . '<br>';
 //}
 
-/**
+/*
  * Assoziativen Array
  */
 $colors = [ 'apple' => 'red', 'banane' => 'yellow', 'cherry' => 'red' ];
@@ -108,7 +108,7 @@ $colors[ 'mango' ] = 'orange';
 // überprüfen ob ein Key im Array existiert
 $cherry_exists = array_key_exists( 'cherry', $colors );
 
-/**
+/*
  * Boolean
  *
  * Ein Boolean ist ein Datentyp, der nur zwei Werte annehmen kann: true oder false.
