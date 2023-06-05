@@ -74,19 +74,19 @@ function aToX( string $a, string $x ) {
 //echo $a;
 
 /**
- * Aktualisiert den Wert der übergebenen Referenzvariable $a auf den Wert von $x.
- * Diese Funktion nimmt eine Referenzvariable $a und einen Wert $x entgegen. S
- * ie ändert den Wert der Referenzvariable $a auf den Wert von $x.
+ * Aktualisiert den Wert der übergebenen Referenzvariable $a auf den Wert von $y.
+ * Diese Funktion nimmt eine Referenzvariable $a und einen Wert $y entgegen.
+ * Sie ändert den Wert der Referenzvariable $a auf den Wert von $y.
  * Da es sich um eine Referenzvariable handelt, wird die ursprüngliche Variable, auf die $a verweist, außerhalb der Funktion ebenfalls aktualisiert.
  * Der Rückgabewert ist der aktualisierte Wert von $a.
  *
  * @param string &$a Die Referenzvariable, deren Wert aktualisiert werden soll.
- * @param string  $x Der Wert, auf den $a gesetzt werden soll.
+ * @param string  $y Der Wert, auf den $a gesetzt werden soll.
  * @return string Der aktualisierte Wert von $a.
  */
-function aToX( string &$a, string $x ) {
-	$a = $x;
+function aToY( string &$a, string $y ) {
+	$a = $y;
 }
 
-//aToX( $a, 'X' );
+//aToY( $a, 'Y' );
 //echo $a;
