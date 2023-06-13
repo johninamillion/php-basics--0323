@@ -15,7 +15,7 @@ function grab_fruits_by_color( array $fruits_in_basket, string $color ) : array 
 $fruits = [
 	'apple' =>          'red',
 	'strawberry' =>     'red',
-	'cherrey' =>		'red',
+	'cherry' =>		    'red',
 	'banana' =>         'yellow',
 	'pineapple' =>      'yellow',
 	'orange' =>         'orange',
