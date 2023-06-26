@@ -137,8 +137,6 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
     $validateCountry  = validateCountry( $country, $errors );
     $validateTermsOfService = validateTermsOfService( $termsOfService, $errors );
 
-    var_dump( $_POST );
-
     if (
             $validateGender
         &&  $validateUsername
