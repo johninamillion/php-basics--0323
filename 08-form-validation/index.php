@@ -3,8 +3,6 @@
 error_reporting( E_ALL );
 ini_set( 'display_errors', '1' );
 
-$errors = [];
-
 function renderErrors( string $inputName ) : void {
 	global $errors;
 
@@ -122,7 +120,7 @@ function validateUsername( ?string $username, array &$errors ) : bool {
 	return !isset( $errors[ 'username' ] );
 }
 
-if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
+function register( array &$errors = [] ) : bool {
 	$gender         = filter_input( INPUT_POST, 'gender' );
 	$username       = filter_input( INPUT_POST, 'username' );
 	$email          = filter_input( INPUT_POST, 'email' );
@@ -133,19 +131,23 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
 	$validateGender   = validateGender( $gender, $errors );
 	$validateUsername = validateUsername( $username, $errors );
 	$validateEmail    = validateEmail( $email, $errors );
-    $validatePassword = validatePassword( $password, $errors );
-    $validateCountry  = validateCountry( $country, $errors );
-    $validateTermsOfService = validateTermsOfService( $termsOfService, $errors );
+	$validatePassword = validatePassword( $password, $errors );
+	$validateCountry  = validateCountry( $country, $errors );
+	$validateTermsOfService = validateTermsOfService( $termsOfService, $errors );
 
-    if (
-            $validateGender
-        &&  $validateUsername
-        &&  $validateEmail
-        &&  $validatePassword
-        &&  $validateCountry
-        &&  $validateTermsOfService
-    ) {
-        exit( 'Deine registrierung war erfolgreich!' );
+    return  $validateGender
+		&&  $validateUsername
+		&&  $validateEmail
+		&&  $validatePassword
+		&&  $validateCountry
+		&&  $validateTermsOfService;
+}
+
+$errors = [];
+
+if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
+    if ( register( $errors ) ) {
+        exit( 'Registrierung erfolgreich!' );
     }
 }
 ?>
