@@ -7,12 +7,13 @@
 <body>
 <main>
     <form method="post" action="index.php">
+        <?php var_dump( $_POST ); ?>
         <div class="form-group form-group--radio">
             <p>Geschlecht</p>
 			<?php renderErrors( 'gender' ); ?>
 			<?php foreach ( $gender_options as $value => $label ): ?>
             <div class="form-input form-input--radio">
-                <input id="gender--<?= $value ?>>" name="gender" type="radio" value="<?= $value ?>"/>
+                <input id="gender--<?= $value ?>>" name="gender" type="radio" value="<?= $value ?>"<?= inputChecked( 'gender', $value ) ?>/>
                 <label for="gender--<?= $value ?>>"><?= $label ?></label>
             </div>
 			<?php endforeach; ?>
@@ -21,13 +22,13 @@
             <label for="username">Benutzername</label>
 			<?php
 			renderErrors( 'username' ); ?>
-            <input id="username" name="username" type="text"/>
+            <input id="username" name="username" type="text"<?= inputValue( 'username' ) ?>>
         </div>
         <div class="form-group form-group--text">
             <label for="email">E-Mail Adresse</label>
 			<?php
 			renderErrors( 'email' ); ?>
-            <input id="email" name="email" type="text"/>
+            <input id="email" name="email" type="text"<?= inputValue( 'email' ) ?>/>
         </div>
         <div class="form-group form-group--text">
             <label for="password">Passwort</label>
@@ -42,7 +43,7 @@
             <select id="country" name="country" size="4">
 				<?php
 				foreach ( $country_options as $value => $label ): ?>
-                    <option value="<?= $value ?>"><?= $label ?></option>
+                    <option value="<?= $value ?>"<?=inputSelected( 'country', $value )?>><?= $label ?></option>
 				<?php
 				endforeach; ?>
             </select>
