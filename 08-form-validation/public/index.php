@@ -6,6 +6,21 @@ ini_set( 'display_errors', '1' );
 // errors global definieren
 $errors = [];
 
+$gender_options = [
+	'male' => 'Männlich',
+	'female' => 'Weiblich',
+	'non-binary' => 'Non-Binär'
+];
+
+$country_options = [
+	'germany' => 'Deutschland',
+	'austria' => 'Österreich',
+	'switzerland' => 'Schweiz',
+	'france' => 'Frankreich',
+	'spain' => 'Spanien',
+	'greece' => 'Griechenland'
+];
+
 // einbinden von template functions (render_errors), wird für die fehlerfreie anzeige von templates benötigt
 require_once  __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'templates.php';
 

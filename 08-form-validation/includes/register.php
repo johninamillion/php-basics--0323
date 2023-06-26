@@ -24,11 +24,13 @@ function register( array &$errors = [] ) : bool {
 }
 
 function validateCountry( ?string $country, array &$errors  ) : bool {
+	global $country_options;
+
 	// überprüfen ob ein land ausgewählt wurde
 	if ( is_null( $country ) ) {
 		$errors[ 'country' ][] = 'Bitte wählen Sie ein Land aus.';
 	}
-	elseif ( !in_array( $country, [ 'germany', 'austria', 'switzerland', 'france' ] ) ) {
+	elseif ( !array_key_exists( $country, $country_options ) ) {
 		$errors[ 'country' ][] = 'Bitte wählen Sie ein verfügbares Land aus.';
 	}
 
@@ -49,12 +51,14 @@ function validateEmail( ?string $email, array &$errors ) : bool {
 }
 
 function validateGender( ?string $gender, array &$errors ) : bool {
+	global $gender_options;
+
 	// überprüfen ob ein geschlecht ausgewählt wurde
 	if ( is_null( $gender ) ) {
 		$errors[ 'gender' ][] = 'Bitte wählen Sie ein Geschlecht aus.';
 	}
 	// überprüfen ob der wert von gender im array mit allen optionen vorhanden ist
-	elseif ( !in_array( $gender, [ 'male', 'female' ] ) ) {
+	elseif ( !array_key_exists( $gender, $gender_options ) ) {
 		$errors[ 'gender' ][] = 'Bitte wähle ein verfügbares Geschlecht aus.';
 	}
 
