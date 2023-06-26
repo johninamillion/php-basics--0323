@@ -39,7 +39,7 @@ function validateEmail( ?string $email, array &$errors ) : bool {
 		$errors[ 'email' ][] = 'Die E-Mail Adresse ist ungültig.';
 	}
 
-	return !isset( $email );
+	return !isset( $errors[ 'email' ] );
 }
 
 function validateGender( ?string $gender, array &$errors ) : bool {
@@ -115,7 +115,7 @@ function validateUsername( ?string $username, array &$errors ) : bool {
 		$errors[ 'username' ][] = 'Der Benutzername darf maximal 16 Zeichen lang sein.';
 	}
 	// überprüfen ob der Nutername whitespace (leerzeichen/tabs) enthält
-	if ( preg_match( '/\s/', $username ) ) {
+	if ( !is_null( $username ) && preg_match( '/\s/', $username ) ) {
 		$errors[ 'username' ][] = 'Der Benutzername darf keine Leerzeichen enthalten.';
 	}
 
@@ -136,6 +136,19 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
     $validatePassword = validatePassword( $password, $errors );
     $validateCountry  = validateCountry( $country, $errors );
     $validateTermsOfService = validateTermsOfService( $termsOfService, $errors );
+
+    var_dump( $_POST );
+
+    if (
+            $validateGender
+        &&  $validateUsername
+        &&  $validateEmail
+        &&  $validatePassword
+        &&  $validateCountry
+        &&  $validateTermsOfService
+    ) {
+        exit( 'Deine registrierung war erfolgreich!' );
+    }
 }
 ?>
 <!DOCTYPE html>
