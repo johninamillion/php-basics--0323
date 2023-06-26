@@ -32,7 +32,7 @@
         </div>
         <div class="form-group form-group--select">
             <label for="country">Nationalität</label>
-            <select id="country" name="country" required>
+            <select id="country" name="country" size="4" required>
                 <option value="germany">Deutschland</option>
                 <option value="austria">Österreich</option>
                 <option value="switzerland">Schweiz</option>
