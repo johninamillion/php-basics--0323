@@ -62,6 +62,9 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
     <form method="post" action="index.php">
         <div class="form-group form-group--radio">
             <p>Geschlecht</p>
+	        <?php foreach( $errors[ 'gender' ] as $error ): ?>
+                <p><?= $error ?></p>
+	        <?php endforeach; ?>
             <div class="form-input form-input--radio">
                 <input id="gender--male" name="gender" type="radio" value="male"/>
                 <label for="gender--male">Männlich</label>
@@ -73,6 +76,9 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
         </div>
         <div class="form-group form-group--text">
             <label for="username">Benutzername</label>
+	        <?php foreach( $errors[ 'username' ] as $error ): ?>
+                <p><?= $error ?></p>
+	        <?php endforeach; ?>
             <input id="username" name="username" type="text" required/>
         </div>
         <div class="form-group form-group--text">
