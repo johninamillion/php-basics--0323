@@ -2,20 +2,41 @@
 
 namespace SaeInstitute\WebPHP;
 
+use SaeInstitute\WebPHP\Car\BMW;
+use SaeInstitute\WebPHP\Car\Bugatti;
+use SaeInstitute\WebPHP\Car\Mini;
 use SaeInstitute\WebPHP\Controller\IndexController;
 //use SaeInstitute\WebPHP\Controller\IndexController as Asd;
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config.php';
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autoload.php';
 
+$tomsGarage = new Garage( 'Toms Garage' );
+$jerrysGarage = new Garage( 'Jerrys Garage' );
 
-$application = new Application();
+$bmwI3 = new BMW( 'i3', BMW::TYPE_SUPERCAR, BMW::COLOR_RED );
+$bmwI8 = new BMW( 'i8', BMW::TYPE_SUPERCAR, BMW::COLOR_RED );
+$bugatti = new Bugatti( 'Veyron' );
+$mini = new Mini( 'Cooper', Mini::COLOR_RED );
+$mercdes = new Mercedes( 'SLS', Mercedes::TYPE_SUPERCAR, Mercedes::COLOR_RED );
 
-//with use
-$indexController = new IndexController();
-//without use
-//$indexController = new Controller\Index()
-//with use and alias
-//$indexController = new Asd();
+$tomsGarage->parkCar( $bmwI3 );
+$tomsGarage->parkCar( $bmwI8 );
 
-var_dump( $indexController );
+echo "<pre>";
+var_dump( $tomsGarage );
+echo "</pre>";
+
+$tomsGarage->paintCars( BMW::COLOR_BLUE );
+
+echo "<pre>";
+var_dump( $tomsGarage );
+echo "</pre>";
+
+
+$bmwI3->leave( $tomsGarage )->park( $jerrysGarage );
+$bmwI8->leave( $tomsGarage )->park( $jerrysGarage );
+
+echo "<pre>";
+var_dump( $jerrysGarage );
+echo "</pre>";
