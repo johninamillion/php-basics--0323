@@ -5,6 +5,16 @@ ini_set( 'display_errors', '1' );
 
 $errors = [];
 
+function renderErrors( string $inputName ) : void {
+    global $errors;
+
+    if ( isset( $errors[ $inputName ] ) ) {
+        foreach ( $errors[ $inputName ] as $error ) {
+            echo "<p class=\"error\">$error</p>";
+        }
+    }
+}
+
 function validateGender( ?string $gender, array &$errors ) : bool {
     // überprüfen ob ein geschlecht ausgewählt wurde
 	if ( is_null( $gender ) ) {
@@ -62,9 +72,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
     <form method="post" action="index.php">
         <div class="form-group form-group--radio">
             <p>Geschlecht</p>
-	        <?php foreach( $errors[ 'gender' ] as $error ): ?>
-                <p><?= $error ?></p>
-	        <?php endforeach; ?>
+            <?php renderErrors( 'gender' ); ?>
             <div class="form-input form-input--radio">
                 <input id="gender--male" name="gender" type="radio" value="male"/>
                 <label for="gender--male">Männlich</label>
@@ -76,21 +84,22 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
         </div>
         <div class="form-group form-group--text">
             <label for="username">Benutzername</label>
-	        <?php foreach( $errors[ 'username' ] as $error ): ?>
-                <p><?= $error ?></p>
-	        <?php endforeach; ?>
+	        <?php renderErrors( 'username' ); ?>
             <input id="username" name="username" type="text" required/>
         </div>
         <div class="form-group form-group--text">
             <label for="email">E-Mail Adresse</label>
+	        <?php renderErrors( 'email' ); ?>
             <input id="email" name="email" type="email" required/>
         </div>
         <div class="form-group form-group--text">
             <label for="password">Passwort</label>
+	        <?php renderErrors( 'password' ); ?>
             <input id="password" name="password" type="password" required/>
         </div>
         <div class="form-group form-group--select">
             <label for="country">Nationalität</label>
+	        <?php renderErrors( 'country' ); ?>
             <select id="country" name="country" size="4" required>
                 <option value="germany">Deutschland</option>
                 <option value="austria">Österreich</option>
@@ -100,6 +109,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
         </div>
         <div class="form-group form-group--checkbox">
             <p>Weiteres</p>
+	        <?php renderErrors( 'terms-of-service' ); ?>
             <div class="form-input form-input--checkbox">
                 <input id="terms-of-service" name="terms-of-service" type="checkbox" required/>
                 <label for="terms-of-service">Ich aktzeptiere die Allgemeine Geschäftsbedingungen</label>
