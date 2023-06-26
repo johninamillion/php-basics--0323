@@ -2,9 +2,9 @@
 
 class Auto {
 
-	public $marke = 'BMW';
+	public string $marke = 'BMW';
 
-	public function start() {
+	public function start() : void {
 		echo "{$this->marke} gestartet";
 	}
 
@@ -17,4 +17,6 @@ $mercedes = new Auto();
 // schreiben der marke in die variable marke des objekts bmw
 $mercedes->marke = 'Mercedes';
 
-$mercedes->start();
+
+var_dump( $mercedes );
+//$mercedes->start();
