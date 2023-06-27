@@ -15,9 +15,9 @@ namespace SaeInstitute\WebPHP;
 	 private bool    $parked        = FALSE;
 
 	 public function __construct(
-		 protected string $name,
-		 protected string $manufacturer,
-		 protected string $model,
+		 protected readonly string $name,
+		 protected readonly string $manufacturer,
+		 protected readonly string $model,
 		 protected string $color = AbstractCar::COLOR_BLACK
 	 ) {}
 
