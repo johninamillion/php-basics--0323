@@ -3,6 +3,7 @@
 namespace SaeInstitute\WebPHP\Car;
 
 use SaeInstitute\WebPHP\AbstractCar;
+use SaeInstitute\WebPHP\NormalCrashTrait;
 
 class Mercedes extends AbstractCar {
 
