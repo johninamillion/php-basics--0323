@@ -4,6 +4,7 @@ namespace SaeInstitute\WebPHP;
 
 use SaeInstitute\WebPHP\Car\BMW;
 use SaeInstitute\WebPHP\Car\Bugatti;
+use SaeInstitute\WebPHP\Car\Mercedes;
 use SaeInstitute\WebPHP\Car\Mini;
 use SaeInstitute\WebPHP\Controller\IndexController;
 //use SaeInstitute\WebPHP\Controller\IndexController as Asd;
@@ -18,7 +19,7 @@ $bmwI3 = new BMW( 'i3', BMW::TYPE_SUPERCAR, BMW::COLOR_RED );
 $bmwI8 = new BMW( 'i8', BMW::TYPE_SUPERCAR, BMW::COLOR_RED );
 $bugatti = new Bugatti( 'Veyron' );
 $mini = new Mini( 'Cooper', Mini::COLOR_RED );
-$mercdes = new Mercedes( 'SLS', Mercedes::TYPE_SUPERCAR, Mercedes::COLOR_RED );
+$mercedes = new Mercedes( 'SLS', Mercedes::TYPE_SUPERCAR, Mercedes::COLOR_RED );
 
 $tomsGarage->parkCar( $bmwI3 );
 $tomsGarage->parkCar( $bmwI8 );

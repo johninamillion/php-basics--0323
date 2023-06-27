@@ -1,6 +1,6 @@
 <?php
 
-namespace Car;
+namespace SaeInstitute\WebPHP\Car;
 
 use SaeInstitute\WebPHP\AbstractCar;
 
