@@ -14,12 +14,12 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autol
 $tomsGarage = new Garage( 'Toms Garage' );
 $jerrysGarage = new Garage( 'Jerrys Garage' );
 
-$bmwI3 = new BMW( 'i3', BMW::TYPE_SUPERCAR, BMW::COLOR_RED );
-$bmwI8 = new BMW( 'i8', BMW::TYPE_SUPERCAR, BMW::COLOR_RED );
-$bugatti = new Bugatti( 'Veyron', Bugatti::COLOR_RED );
-$mini = new Mini( 'Cooper', Mini::COLOR_RED );
-$mercedes = new Mercedes( 'SLS', Mercedes::TYPE_SUPERCAR, Mercedes::COLOR_RED );
-$ducatti = new Bike( 'Ducatti', 'Ducatti', 'Monster', AbstractCar::COLOR_RED );
+$bmwI3 = new BMW( 'i3', BMW::TYPE_SUPERCAR, ColorEnum::Blue );
+$bmwI8 = new BMW( 'i8', BMW::TYPE_SUPERCAR, ColorEnum::Blue );
+$bugatti = new Bugatti( 'Veyron', ColorEnum::Blue );
+$mini = new Mini( 'Cooper', ColorEnum::Blue );
+$mercedes = new Mercedes( 'SLS', Mercedes::TYPE_SUPERCAR, ColorEnum::Blue );
+$ducatti = new Bike( 'Ducatti', 'Ducatti', 'Monster', ColorEnum::Blue );
 
 $tomsGarage->parkCar( $bmwI3 );
 $tomsGarage->parkCar( $bmwI8 );
@@ -32,7 +32,7 @@ echo "<pre>";
 var_dump( $tomsGarage );
 echo "</pre>";
 
-$tomsGarage->paintCars( BMW::COLOR_BLUE );
+$tomsGarage->paintCars( ColorEnum::Red );
 
 echo "<pre>";
 var_dump( $tomsGarage );
@@ -44,4 +44,8 @@ $bmwI8->leave( $tomsGarage )->park( $jerrysGarage );
 
 echo "<pre>";
 var_dump( $jerrysGarage );
+echo "</pre>";
+
+echo "<pre>";
+var_dump( $bmwI3->getColor() );
 echo "</pre>";

@@ -3,6 +3,6 @@
 namespace SaeInstitute\WebPHP;
 
 interface PaintableInterface {
-	public function paint( string $color ) : self;
+	public function paint( ColorEnum $color ) : self;
 
 }

@@ -37,7 +37,7 @@ final class Garage {
 		return $this;
 	}
 
-	public function paintCars( string $color ) : self {
+	public function paintCars( ColorEnum $color ) : self {
 		foreach ( $this->cars as $car ) {
 			if ( $car instanceof PaintableInterface ) {
 				$car->paint( $color );

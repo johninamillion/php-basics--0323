@@ -18,7 +18,7 @@ namespace SaeInstitute\WebPHP;
 		 protected readonly string $name,
 		 protected readonly string $manufacturer,
 		 protected readonly string $model,
-		 protected string $color = AbstractCar::COLOR_BLACK
+		 protected ColorEnum $color = ColorEnum::BLACK
 	 ) {}
 
  }

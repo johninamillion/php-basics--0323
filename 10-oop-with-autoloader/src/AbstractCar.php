@@ -6,12 +6,6 @@ abstract class AbstractCar implements VehicleInterface {
 
 	use VehicleTrait;
 
-	const COLOR_BLACK = 'black';
-	const COLOR_BLUE  = 'blue';
-	const COLOR_GREEN = 'green';
-	const COLOR_RED   = 'red';
-	const COLOR_WHITE = 'white';
-
 	const TYPE_HYPER_CAR = 'hyper-car';
 	const TYPE_OLDTIMER  = 'oldtimer';
 
@@ -26,7 +20,12 @@ abstract class AbstractCar implements VehicleInterface {
 		protected string $manufacturer,
 		protected string $model,
 		protected string $type,
-		protected string $color = self::COLOR_BLACK
+		protected ColorEnum $color = ColorEnum::WHITE,
 	) {}
+
+	public function getColor() : ColorEnum {
+
+		return $this->color;
+	}
 
 }
