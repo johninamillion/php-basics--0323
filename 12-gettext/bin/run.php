@@ -11,7 +11,7 @@ use Gettext\Translations;
 require_once  __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 $poLoader = new PoLoader();
-$previousTranslations = $poLoader->loadFile( 'locales/en.po' );
+$previousTranslations = $poLoader->loadFile( 'locales/en_US/LC_MESSAGES/domain1.po' );
 
 $phpScanner = new PhpScanner(
 	Translations::create( 'domain1' )
@@ -30,9 +30,4 @@ foreach( $phpScanner->getTranslations() as $translation ) {
 }
 
 $poGenerator = new PoGenerator();
-$poGenerator->generateFile( $previousTranslations, 'locales/en.po' );
-
-$moGenerator = new MoGenerator();
-$moGenerator->generateFile( $previousTranslations, 'locales/en.mo' );
-
-
+$poGenerator->generateFile( $previousTranslations, 'locales/en_US/LC_MESSAGES/domain1.po' );
