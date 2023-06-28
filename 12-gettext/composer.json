@@ -5,5 +5,7 @@
             "SaeInstitute\\PhpGetText\\": "src/"
         }
     },
-    "require": {}
+    "require-dev": {
+        "gettext/gettext": "^5.7"
+    }
 }
