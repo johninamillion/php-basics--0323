@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+"Language-Team: \n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: \n"
+"POT-Creation-Date: \n"
+"Project-Id-Version: \n"
+"X-Domain: domain1\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:7
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:8
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:23
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:24
+msgid "Hello World!"
+msgstr ""
+
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:9
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:25
+msgid "How are you?"
+msgstr ""
+
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:10
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:26
+msgid "I am fine!"
+msgstr ""
+
+#. i18n: I am very fine!
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:11
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:27
+msgid "And you?"
+msgstr ""
+
+#. i18n: I am very fine!
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:28
+msgid "Braindamage"
+msgstr ""
