@@ -1,0 +1,21 @@
+msgid ""
+msgstr ""
+"X-Domain: domain1\n"
+
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:7
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:8
+msgid "Hello World!"
+msgstr ""
+
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:9
+msgid "How are you?"
+msgstr ""
+
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:10
+msgid "I am fine!"
+msgstr ""
+
+#. i18n: I am very fine!
+#: /home/jiam/git/johninamillion/php-basics--0323/12-gettext/bin/../public/index.php:11
+msgid "And you?"
+msgstr ""
