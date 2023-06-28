@@ -1,0 +1,9 @@
+{
+    "name": "sae-institute/php-get-text",
+    "autoload": {
+        "psr-4": {
+            "SaeInstitute\\PhpGetText\\": "src/"
+        }
+    },
+    "require": {}
+}
